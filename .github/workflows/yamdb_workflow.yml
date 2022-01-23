@@ -22,7 +22,6 @@ jobs:
 
     - name: Test with flake8 and django tests
       run: |
-        pwd
         python -m flake8
         pytest
 
@@ -71,4 +70,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ github.workflow }} для проекта yamdb_final успешно выполнен!
+          message: ${{ github.workflow }} успешно выполнен!
