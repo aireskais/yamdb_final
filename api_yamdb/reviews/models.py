@@ -1,9 +1,8 @@
+from api.validators import validate_year
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import MaxValueValidator
 from django.db import models
 from django.db.models import Q
-
-from api.validators import validate_year
 
 
 class RoleChoices(models.Model):

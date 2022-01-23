@@ -23,6 +23,8 @@ jobs:
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
+        cd api_yamdb/
+        python manage.py test
 
   build_and_push_to_docker_hub:
     name: Push Docker image to Docker Hub
@@ -36,7 +38,7 @@ jobs:
       - name: Login to Docker
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: ${{ secrets.DOCKER_USERNAME1 }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push to Docker Hub
         uses: docker/build-push-action@v2

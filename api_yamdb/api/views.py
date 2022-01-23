@@ -5,15 +5,14 @@ from django.contrib.auth import get_user_model
 from django.core.mail import send_mail
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
-
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters, status, viewsets
 from rest_framework.decorators import action, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
-from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Genre, Review, RoleChoices, Title
 
 from .filters import TitleFilter
 from .mixins import NoSlugDeleteViewSet
@@ -23,7 +22,6 @@ from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer, SignUpSerializer,
                           TitlePostSerializer, TitleReadSerializer,
                           TokenSerializer, UserSerializer)
-from reviews.models import Category, Genre, Review, RoleChoices, Title
 
 User = get_user_model()
 
