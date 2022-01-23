@@ -14,7 +14,6 @@ from rest_framework.views import APIView
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework_simplejwt.tokens import RefreshToken
-from reviews.models import Category, Genre, Review, RoleChoices, Title
 
 from .filters import TitleFilter
 from .mixins import NoSlugDeleteViewSet
@@ -24,6 +23,7 @@ from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, ReviewSerializer, SignUpSerializer,
                           TitlePostSerializer, TitleReadSerializer,
                           TokenSerializer, UserSerializer)
+from reviews.models import Category, Genre, Review, RoleChoices, Title
 
 User = get_user_model()
 
