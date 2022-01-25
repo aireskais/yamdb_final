@@ -8,6 +8,4 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . .
 
-CMD ["gunicorn", "./yamdb_final/api_yamdb/api_yamdb.wsgi:application", "--bind", "0:8000"]
-
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+CMD ["gunicorn", "./api_yamdb/api_yamdb/wsgi.py:application", "--bind", "0:9000"]
