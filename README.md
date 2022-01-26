@@ -51,9 +51,9 @@ DB_PORT=5432
 После удачного деплоя, на сервере выполнить миграции, создать суперпользователя и собрать статику:
 
 ```
-sudo docker-compose exec python manage.py migrate
-sudo docker-compose exec python manage.py createsuperuser
-sudo docker-compose exec python manage.py collectstatic --no-input
+sudo docker-compose exec web python manage.py migrate
+sudo docker-compose exec web python manage.py createsuperuser
+sudo docker-compose exec web python manage.py collectstatic --no-input
 ```
 
 Заполнить БД тестовыми данными:
